@@ -1,0 +1,13 @@
+.topbar{
+    background-color: grey;
+    height: 50px;
+    width: 10%;
+}
+
+.topbar ul{
+    list-style: none;
+}
+
+.topbar ul li{
+    list-style: none;
+}

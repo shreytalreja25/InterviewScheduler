@@ -18,5 +18,16 @@ def upload_resume():
     
     return jsonify({"code": generated_code})
 
+@app.route('/generate_code', methods=['POST'])
+def generate_portfolio_code():
+    if 'resume' not in request.files:
+        return jsonify({"error": "No resume file provided"})
+
+    resume_file = request.files['resume']
+    resume_text = extract_text_from_resume(resume_file)
+    generated_code = generate_code(resume_text)
+    
+    return jsonify({"code": generated_code})
+
 if __name__ == '__main__':
     app.run(debug=True)
